@@ -5,7 +5,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 
 const ROUTES: Routes = [
     { path: 'home', component: BodyComponent },
-     {path: 'regisgtro', component: RegistroComponent }
+     {path: 'registro', component: RegistroComponent }
 ];
 
 export const APPROUTING = RouterModule.forRoot(ROUTES);
