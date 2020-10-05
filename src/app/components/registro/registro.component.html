@@ -11,7 +11,17 @@
                         <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Ingrese su cedula de identidad">
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+                        <button type="submit" class="btn btn-info">Buscar</button>
+                    </div>
+                    <div class="col-auto">
+                    </div>
+                    <div class="col-auto">
+                        <b>
+                            <label> Fecha:</label>
+                        </b>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control mb-2" id="inlineFormInput">
                     </div>
                 </div>
                 <div class="form-row align-items-center">
@@ -25,16 +35,39 @@
                         <input type="text" class="form-control  mb-3" placeholder="Carrera">
                     </div>
                 </div>
-                <div class="form-row align-items-center">
-                    <div class="col-auto">
-                        <label class="badge badge-light">Numero de laboratorio</label>
-                        <input type="number" class="form-control mb-2">
+                <div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Asignaturas
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
                     </div>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div class="form-row align-items-center">
                     <div class="col-auto">
                         <b>
                             <label>Numero de equipo</label>
                         </b>
-                        <input type="number" class="form-control mb-2">
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" class="form-control mb-4">
+                    </div>
+                </div>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <b>
+                            <label>Numero de laboratorio</label>
+                        </b>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" class="form-control mb-4">
                     </div>
                 </div>
                 <div>
@@ -46,5 +79,9 @@
 
                         </div>
                     </div>
+                </div>
+                <div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
             </form>
