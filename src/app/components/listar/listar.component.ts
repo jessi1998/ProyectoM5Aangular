@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EstudianteRestService } from '../../Codegen/api/estudianteRest.service';
 
 @Component({
   selector: 'app-listar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarComponent implements OnInit {
 
-  constructor() { }
+  estudiantes:any;
+  constructor(private estudianteservice:EstudianteRestService) { }
 
   ngOnInit(): void {
+    this.estudianteservice.listStudentsUsingGET().subscribe(data=>{this.estudiantes=data})
   }
+
+  
 
 }

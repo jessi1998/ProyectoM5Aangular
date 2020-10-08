@@ -1,0 +1,11 @@
+export * from './basicErrorController.service';
+import { BasicErrorControllerService } from './basicErrorController.service';
+export * from './bitacoraRest.service';
+import { BitacoraRestService } from './bitacoraRest.service';
+export * from './carreraRest.service';
+import { CarreraRestService } from './carreraRest.service';
+export * from './estudianteRest.service';
+import { EstudianteRestService } from './estudianteRest.service';
+export * from './laboratorioRest.service';
+import { LaboratorioRestService } from './laboratorioRest.service';
+export const APIS = [BasicErrorControllerService, BitacoraRestService, CarreraRestService, EstudianteRestService, LaboratorioRestService];

@@ -8,10 +8,10 @@
             <form>
                 <div class="form-row align-items-center">
                     <div class="col-auto">
-                        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Ingrese su cedula de identidad">
+                        <input type="text" class="form-control mb-2" name="cedula" id="cedula" placeholder="Ingrese su cedula de identidad" [(ngModel)]="cedula">
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-info">Buscar</button>
+                        <button type="submit" class="btn btn-info" (click)="Buscar()">Buscar</button>
                     </div>
                     <div class="col-auto">
                     </div>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-row align-items-center">
                     <div class="col-auto">
-                        <input type="text" class="form-control mb-3" placeholder="Nombre">
+                        <input type="text" class="form-control mb-3" placeholder="Nombre" value={{nombre}}>
                     </div>
                     <div class="col-auto">
                         <input type="text" class="form-control  mb-3" placeholder="Apellido">

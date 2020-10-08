@@ -12,13 +12,10 @@
             <p class="lead text-center " style="opacity: 3; font-size: 30px ">
                 <b>Lista de laboratorios</b>
             </p>
-            <div class="list-group ">
-                <a href="# " class="list-group-item list-group-item-action "> Cras justo odio </a>
-                <a href="# " class="list-group-item list-group-item-action ">Dapibus ac facilisis in</a>
-                <a href="# " class="list-group-item list-group-item-action ">Morbi leo risus</a>
-                <a href="# " class="list-group-item list-group-item-action ">Porta ac consectetur ac</a>
-                <a href="# " class="list-group-item list-group-item-action " tabindex="-1 " aria-disabled="true ">Vestibulum at eros</a>
+            <div class="list-group  " *ngFor=" let estudiante of estudiantes">
+                <a href="# " class="list-group-item list-group-item-action "> {{estudiante.nombre}} </a>
             </div>
         </div>
+
     </div>
 </div>
