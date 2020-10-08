@@ -29,10 +29,10 @@
                         <input type="text" class="form-control mb-3" placeholder="Nombre" value={{nombre}}>
                     </div>
                     <div class="col-auto">
-                        <input type="text" class="form-control  mb-3" placeholder="Apellido">
+                        <input type="text" class="form-control  mb-3" placeholder="Apellido" value={{apellido}}>
                     </div>
                     <div class="col-auto">
-                        <input type="text" class="form-control  mb-3" placeholder="Carrera">
+                        <input type="text" class="form-control  mb-3" placeholder="Carrera" value={{nombrecarrera}}>
                     </div>
                 </div>
                 <div>
@@ -87,6 +87,6 @@
                 </div>
                 <div>
                     <br>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="submit" class="btn btn-primary" (click)="BuscarCarrera()">Guardar</button>
                 </div>
             </form>
