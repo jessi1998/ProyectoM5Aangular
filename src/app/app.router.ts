@@ -7,7 +7,8 @@ import { ListarComponent } from './components/listar/listar.component';
 const ROUTES: Routes = [
     { path: 'home', component: BodyComponent },
      {path: 'registro', component: RegistroComponent },
-     {path: 'listar' , component: ListarComponent}
+     {path: 'listar' , component: ListarComponent},
+     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
 export const APPROUTING = RouterModule.forRoot(ROUTES);

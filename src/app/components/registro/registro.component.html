@@ -21,7 +21,7 @@
                         </b>
                     </div>
                     <div class="col-auto">
-                        <input type="text" class="form-control mb-2" id="inlineFormInput">
+                        <input type="date" class="form-control mb-2" id="inlineFormInput" value={{fecha}}>
                     </div>
                 </div>
                 <div class="form-row align-items-center">
@@ -35,22 +35,36 @@
                         <input type="text" class="form-control  mb-3" placeholder="Carrera" value={{nombrecarrera}}>
                     </div>
                 </div>
-                <div>
-                    <div class="col-auto">
-                        <b>
-                            <label>Asignatura:</label>
-                        </b>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <div class="col-auto">
+                            <b>
+                                <label>Nivel:</label>
+                            </b>
+
+
+                            <select formControlName="pais" name="pais" id="pais" class="form-control">
+                                <option value="Ecuador">Ecuador</option>
+                            </select>
+                        </div>
+
                     </div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Asignaturas
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="form-group col-md-6">
+                        <div class="col-auto">
+
+                            <b>
+                                <label>Asignatura:</label>[';
+                                
+                                '']
+                            </b>
+
+
+                            <select formControlName="pais" name="pais" id="pais" class="form-control">
+                                <option value="Ecuador">Ecuador</option>
+                            </select>
                         </div>
                     </div>
+
                 </div>
                 <div>
                     <br>

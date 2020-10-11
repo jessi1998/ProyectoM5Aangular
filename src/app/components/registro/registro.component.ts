@@ -17,10 +17,12 @@ export class RegistroComponent implements OnInit {
   id:0;
   carrera:any;
   nombrecarrera:'';
+  fecha=new Date();
   
   constructor(private estudianteservice:EstudianteRestService, private carreraservice: CarreraRestService) { }
 
   ngOnInit(): void {
+   console.log(this.fecha);
   }
 
   Buscar(){

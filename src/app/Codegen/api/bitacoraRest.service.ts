@@ -57,6 +57,212 @@ export class BitacoraRestService {
 
 
     /**
+     * listBinnaclesById_laboratorio
+     * 
+     * @param idLaboratorio id_laboratorio
+     * @param nombre nombre
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public listBinnaclesByIdLaboratorioUsingGET(idLaboratorio?: number, nombre?: string, observe?: 'body', reportProgress?: boolean): Observable<ResponseEntity>;
+    public listBinnaclesByIdLaboratorioUsingGET(idLaboratorio?: number, nombre?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<ResponseEntity>>;
+    public listBinnaclesByIdLaboratorioUsingGET(idLaboratorio?: number, nombre?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<ResponseEntity>>;
+    public listBinnaclesByIdLaboratorioUsingGET(idLaboratorio?: number, nombre?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+
+
+        let queryParameters = new HttpParams({encoder: new CustomHttpUrlEncodingCodec()});
+        if (idLaboratorio !== undefined && idLaboratorio !== null) {
+            queryParameters = queryParameters.set('id_laboratorio', <any>idLaboratorio);
+        }
+        if (nombre !== undefined && nombre !== null) {
+            queryParameters = queryParameters.set('nombre', <any>nombre);
+        }
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            '*/*'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.request<ResponseEntity>('get',`${this.basePath}/bitacora/list/binnacles/${encodeURIComponent(String(idLaboratorio))}`,
+            {
+                params: queryParameters,
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * listBinnaclesBySpecificsBinacle2
+     * 
+     * @param idLaboratorio id_laboratorio
+     * @param nombreEquipo nombre_equipo
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public listBinnaclesBySpecificsBinacle2UsingGET(idLaboratorio?: number, nombreEquipo?: string, observe?: 'body', reportProgress?: boolean): Observable<ResponseEntity>;
+    public listBinnaclesBySpecificsBinacle2UsingGET(idLaboratorio?: number, nombreEquipo?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<ResponseEntity>>;
+    public listBinnaclesBySpecificsBinacle2UsingGET(idLaboratorio?: number, nombreEquipo?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<ResponseEntity>>;
+    public listBinnaclesBySpecificsBinacle2UsingGET(idLaboratorio?: number, nombreEquipo?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+
+
+        let queryParameters = new HttpParams({encoder: new CustomHttpUrlEncodingCodec()});
+        if (idLaboratorio !== undefined && idLaboratorio !== null) {
+            queryParameters = queryParameters.set('id_laboratorio', <any>idLaboratorio);
+        }
+        if (nombreEquipo !== undefined && nombreEquipo !== null) {
+            queryParameters = queryParameters.set('nombre_equipo', <any>nombreEquipo);
+        }
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            '*/*'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.request<ResponseEntity>('get',`${this.basePath}/bitacora/list/prueba2/binnacles/equipmentname/${encodeURIComponent(String(nombreEquipo))}/laboratorio/${encodeURIComponent(String(idLaboratorio))}`,
+            {
+                params: queryParameters,
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * listBinnaclesBySpecificsBinacle3
+     * 
+     * @param fecha fecha
+     * @param idLaboratorio id_laboratorio
+     * @param nombreEquipo nombre_equipo
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public listBinnaclesBySpecificsBinacle3UsingGET(fecha?: Date, idLaboratorio?: number, nombreEquipo?: string, observe?: 'body', reportProgress?: boolean): Observable<ResponseEntity>;
+    public listBinnaclesBySpecificsBinacle3UsingGET(fecha?: Date, idLaboratorio?: number, nombreEquipo?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<ResponseEntity>>;
+    public listBinnaclesBySpecificsBinacle3UsingGET(fecha?: Date, idLaboratorio?: number, nombreEquipo?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<ResponseEntity>>;
+    public listBinnaclesBySpecificsBinacle3UsingGET(fecha?: Date, idLaboratorio?: number, nombreEquipo?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+
+
+
+        let queryParameters = new HttpParams({encoder: new CustomHttpUrlEncodingCodec()});
+        if (fecha !== undefined && fecha !== null) {
+            queryParameters = queryParameters.set('fecha', <any>fecha.toISOString());
+        }
+        if (idLaboratorio !== undefined && idLaboratorio !== null) {
+            queryParameters = queryParameters.set('id_laboratorio', <any>idLaboratorio);
+        }
+        if (nombreEquipo !== undefined && nombreEquipo !== null) {
+            queryParameters = queryParameters.set('nombre_equipo', <any>nombreEquipo);
+        }
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            '*/*'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.request<ResponseEntity>('get',`${this.basePath}/bitacora/list/prueba3/binnacles/fecha${encodeURIComponent(String())}/equipmentname/${encodeURIComponent(String(nombreEquipo))}/laboratorio/${encodeURIComponent(String(idLaboratorio))}`,
+            {
+                params: queryParameters,
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * listBinnaclesBySpecificsBinacle
+     * 
+     * @param fecha fecha
+     * @param idLaboratorio id_laboratorio
+     * @param nombreEquipo nombre_equipo
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public listBinnaclesBySpecificsBinacleUsingGET(fecha?: string, idLaboratorio?: number, nombreEquipo?: string, observe?: 'body', reportProgress?: boolean): Observable<ResponseEntity>;
+    public listBinnaclesBySpecificsBinacleUsingGET(fecha?: string, idLaboratorio?: number, nombreEquipo?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<ResponseEntity>>;
+    public listBinnaclesBySpecificsBinacleUsingGET(fecha?: string, idLaboratorio?: number, nombreEquipo?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<ResponseEntity>>;
+    public listBinnaclesBySpecificsBinacleUsingGET(fecha?: string, idLaboratorio?: number, nombreEquipo?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+
+
+
+        let queryParameters = new HttpParams({encoder: new CustomHttpUrlEncodingCodec()});
+        if (fecha !== undefined && fecha !== null) {
+            queryParameters = queryParameters.set('fecha', <any>fecha);
+        }
+        if (idLaboratorio !== undefined && idLaboratorio !== null) {
+            queryParameters = queryParameters.set('id_laboratorio', <any>idLaboratorio);
+        }
+        if (nombreEquipo !== undefined && nombreEquipo !== null) {
+            queryParameters = queryParameters.set('nombre_equipo', <any>nombreEquipo);
+        }
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            '*/*'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.request<ResponseEntity>('get',`${this.basePath}/bitacora/list/prueba/binnacles/fecha${encodeURIComponent(String(fecha))}/equipmentname/${encodeURIComponent(String(nombreEquipo))}/laboratorio/${encodeURIComponent(String(idLaboratorio))}`,
+            {
+                params: queryParameters,
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * listBinnacles
      * 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
