@@ -23,8 +23,11 @@ export class RegistroComponent implements OnInit {
   carrera: any;
   nombrecarrera: '';
   laboratorio: any;
-  fecha = new Date();
-  constructor(private estudianteservice: EstudianteRestService, private carreraservice: CarreraRestService, private laboratorioservice: LaboratorioRestService ) { }
+  equipo: any;
+  fecha = new Date().toLocaleString();
+  constructor(private estudianteservice: EstudianteRestService, private carreraservice: CarreraRestService, private laboratorioservice: LaboratorioRestService ){}
+
+
 
   ngOnInit(): void {
    console.log(this.fecha);
@@ -38,8 +41,8 @@ export class RegistroComponent implements OnInit {
       this.nombre = this.estudiante[0].nombre;
       this.apellido = this.estudiante[0].apellido;
       this.id = this.estudiante[0].id_carrera;
-      
-
+      this.BuscarCarrera();
+      this.BuscarLaboratorio();
     });
 
   }
@@ -48,12 +51,13 @@ export class RegistroComponent implements OnInit {
       this.carrera = data;
       this.nombrecarrera = this.carrera[0].carrera_nombre;
       this.nivel = this.carrera[0].niveles;
-      this.asignatura = this.carrera[0].niveles[0].asignaturas;    
+      this.asignatura = this.carrera[0].niveles[0].asignaturas;
     });
   }
   BuscarLaboratorio() {
     this.laboratorioservice.listLaboratorysUsingGET().subscribe(data => {
       this.laboratorio = data;
+      this.equipo = this.laboratorio[0].equipos;
       console.log(this.laboratorio);
     });
   }

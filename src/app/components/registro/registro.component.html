@@ -21,7 +21,7 @@
                         </b>
                     </div>
                     <div class="col-auto">
-                        <input type="date" class="form-control mb-2" id="inlineFormInput" value={{fecha}}>
+                        <input type="text" class="form-control mb-2" id="inlineFormInput" value={{fecha}}>
                     </div>
                 </div>
                 <div class="form-row align-items-center">
@@ -41,7 +41,7 @@
                             <b>
                                 <label>Nivel:</label>
                             </b>
-                            <select formControlName="pais" name="pais" id="pais" class="form-control">
+                            <select formControlName="nivel" name="nivel" id="nivel" class="form-control">
                                 
                                 <option  *ngFor="let niveles of nivel"   >
                                     {{niveles.nivel_nombre}}
@@ -55,7 +55,7 @@
                             <b>
                                 <label>Asignatura:</label>
                             </b>
-                            <select formControlName="pais" name="pais" id="pais" class="form-control">
+                            <select formControlName="asignatura" name="asignatura" id="asignatura" class="form-control">
                                 <option *ngFor="let asignaturas of asignatura">
                                     {{asignaturas.nombre_asignatura}}
                                 </option>
@@ -73,10 +73,10 @@
                             <b>
                                 <label>Numero laboratorio:</label>
                             </b>
-                            <select formControlName="pais" name="pais" id="pais" class="form-control">
+                            <select formControlName="laboratorio" name="laboratorio" id="laboratorio" class="form-control">
                                 
-                                <option   >
-                                    
+                                <option  *ngFor=' let laboratorios of laboratorio' >
+                                    {{laboratorios.nombre_laboratorio}}
                                 </option>
                             </select>
                         </div>
@@ -86,9 +86,9 @@
                             <b>
                                 <label>Numero de equipo:</label>
                             </b>
-                            <select formControlName="pais" name="pais" id="pais" class="form-control">
-                                <option >
-                                    
+                            <select formControlName="maquina" name="maquina" id="maquina" class="form-control">
+                                <option *ngFor='let equipos of equipo' >
+                                    {{equipos.codigo_equipo}}
                                 </option>
                             </select>
                         </div>
