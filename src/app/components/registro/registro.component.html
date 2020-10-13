@@ -5,58 +5,58 @@
             <p class="lead text-center " style="opacity: 3; font-size: 30px">
                 <b>REGISTRO DE USO DEL LABORATORIO</b>
             </p>
-            <form>
-                <div class="form-row align-items-center">
-                    <div class="col-auto">
-                        <input type="text" class="form-control mb-2" name="cedula" id="cedula" placeholder="Ingrese su cedula de identidad" [(ngModel)]="cedula">
+            <form [formGroup]="registerForm">
+                <div class="form-row align-items-center ">
+                    <div class="col-auto ">
+                        <input type="text " class="form-control mb-2 " name="cedula " id="cedula " placeholder="Ingrese su cedula de identidad " [(ngModel)]="cedula ">
                     </div>
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-info" (click)="Buscar()">Buscar</button>
+                    <div class="col-auto ">
+                        <button type="submit " class="btn btn-info " (click)="Buscar() ">Buscar</button>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto ">
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto ">
                         <b>
                             <label> Fecha:</label>
                         </b>
                     </div>
-                    <div class="col-auto">
-                        <input type="text" class="form-control mb-2" id="inlineFormInput" value={{fecha}}>
+                    <div class="col-auto ">
+                        <input type="text " class="form-control mb-2 " id="inlineFormInput " value={{fecha}}>
                     </div>
                 </div>
-                <div class="form-row align-items-center">
-                    <div class="col-auto">
-                        <input type="text" class="form-control mb-3" readonly=»readonly» placeholder="Nombre" value={{nombre}}>
+                <div class="form-row align-items-center ">
+                    <div class="col-auto ">
+                        <input type="text " class="form-control mb-3 " readonly=»readonly» placeholder="Nombre " value={{nombre}}>
                     </div>
-                    <div class="col-auto">
-                        <input type="text" class="form-control  mb-3" readonly=»readonly» placeholder="Apellido" value={{apellido}}>
+                    <div class="col-auto ">
+                        <input type="text " class="form-control mb-3 " readonly=»readonly» placeholder="Apellido " value={{apellido}}>
                     </div>
-                    <div class="col-auto">
-                        <input type="text" class="form-control  mb-3" readonly=»readonly» placeholder="Carrera" value={{nombrecarrera}}>
+                    <div class="col-auto ">
+                        <input type="text " class="form-control mb-3 " readonly=»readonly» placeholder="Carrera " value={{nombrecarrera}}>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <div class="col-auto">
+                <div class="form-row ">
+                    <div class="form-group col-md-6 ">
+                        <div class="col-auto ">
                             <b>
                                 <label>Nivel:</label>
                             </b>
-                            <select formControlName="nivel" name="nivel" id="nivel" class="form-control">
+                            <select formControlName="nivel " name="nivel " id="nivel " class="form-control ">
                                 
-                                <option  *ngFor="let niveles of nivel"   >
+                                <option  *ngFor="let niveles of nivel "   >
                                     {{niveles.nivel_nombre}}
                                 </option>
                             </select>
                         </div>
 
                     </div>
-                    <div class="form-group col-md-6">
-                        <div class="col-auto">
+                    <div class="form-group col-md-6 ">
+                        <div class="col-auto ">
                             <b>
                                 <label>Asignatura:</label>
                             </b>
-                            <select formControlName="asignatura" name="asignatura" id="asignatura" class="form-control">
-                                <option *ngFor="let asignaturas of asignatura">
+                            <select formControlName="asignatura " name="asignatura " id="asignatura " class="form-control ">
+                                <option *ngFor="let asignaturas of asignatura ">
                                     {{asignaturas.nombre_asignatura}}
                                 </option>
                             </select>
@@ -67,13 +67,13 @@
                 <div>
                     <br>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <div class="col-auto">
+                <div class="form-row ">
+                    <div class="form-group col-md-6 ">
+                        <div class="col-auto ">
                             <b>
                                 <label>Numero laboratorio:</label>
                             </b>
-                            <select formControlName="laboratorio" name="laboratorio" id="laboratorio" class="form-control">
+                            <select formControlName="laboratorio " name="laboratorio " id="laboratorio " class="form-control ">
                                 
                                 <option  *ngFor=' let laboratorios of laboratorio' >
                                     {{laboratorios.nombre_laboratorio}}
@@ -81,12 +81,12 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
-                        <div class="col-auto">
+                    <div class="form-group col-md-6 ">
+                        <div class="col-auto ">
                             <b>
                                 <label>Numero de equipo:</label>
                             </b>
-                            <select formControlName="maquina" name="maquina" id="maquina" class="form-control">
+                            <select formControlName="maquina " name="maquina " id="maquina " class="form-control ">
                                 <option *ngFor='let equipos of equipo' >
                                     {{equipos.codigo_equipo}}
                                 </option>
@@ -101,18 +101,18 @@
 
 
                 <div>
-                    <div class="card">
-                        <h5 class="card-header">Observaciones</h5>
-                        <div class="card-body">
+                    <div class="card ">
+                        <h5 class="card-header ">Observaciones</h5>
+                        <div class="card-body ">
 
-                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                            <textarea class="form-control " aria-label="With textarea "></textarea>
 
                         </div>
                     </div>
                 </div>
                 <div>
                     <br>
-                    <button type="submit" class="btn btn-primary" (click)="BuscarLaboratorio()">Guardar</button>
+                    <button type="submit " class="btn btn-primary " (click)="BuscarLaboratorio() ">Guardar</button>
                 </div>
             </form>
         </div>

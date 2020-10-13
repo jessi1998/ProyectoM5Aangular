@@ -4,6 +4,8 @@ import { Estudiante } from '../../Codegen/model/estudiante';
 import { CarreraRestService } from '../../Codegen/api/carreraRest.service';
 import { Laboratorio } from '../../Codegen/model/laboratorio';
 import { LaboratorioRestService } from '../../Codegen/api/laboratorioRest.service';
+import { Bitacora } from 'src/app/Codegen';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
@@ -11,7 +13,8 @@ import { LaboratorioRestService } from '../../Codegen/api/laboratorioRest.servic
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-
+  registerForm: FormGroup;
+  bitacora: Bitacora = {};
   cedula: '';
   estudiante: any;
   nombre: '';
@@ -61,6 +64,13 @@ export class RegistroComponent implements OnInit {
       console.log(this.laboratorio);
     });
   }
+  SelectNivel(){
+  }
+
+  GuardarBitacora(){
+    
+  }
+
   
   }
 

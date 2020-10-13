@@ -14,6 +14,7 @@ export interface Bitacora {
     descripcionBitacora?: string;
     fechaBitacora?: Date;
     id?: number;
+    idEstudiante?: number;
     idLaboratorio?: number;
     nombreEquipo?: string;
 }

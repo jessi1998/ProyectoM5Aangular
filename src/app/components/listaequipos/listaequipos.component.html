@@ -1,0 +1,19 @@
+<div class="row pb-sm-0 my-5 ">
+    <div class="col-lg-8 col-md-10 mx-auto ">
+        <p class="lead text-center " style="opacity: 3; font-size: 30px ">
+            <b>Lista de equipos</b>
+        </p>
+        <table class="table table-bordered table-light">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" *ngFor='let header of cabecera'>{{cabecera}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let equipo of listaequipos'>
+                    <th scope="row">{{equipo.nombre_equipo}}</th>
+                    <th scope="row">{{equipo.codigo_equipo}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>

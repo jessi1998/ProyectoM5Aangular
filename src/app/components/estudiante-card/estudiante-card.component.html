@@ -1,0 +1,11 @@
+<div class="col mb-16">
+    <div class="card animated fadeIn fast" *ngFor='let estudiante of listaestudiantes' style="width: 18rem;">
+        <img src="assets/user.png" alt="" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{estudiante.nombre}} {{estudiante.apellido}}</h5>
+            <p class="card-text">{{estudiante.cedula}}</p>
+            <p class="card-text">{{estudiante.correo_institucional}}</p>
+            <button type="button" class="btn btn-outline-info btn-block"> Ver más</button>
+        </div>
+    </div>
+</div>

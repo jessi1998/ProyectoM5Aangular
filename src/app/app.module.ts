@@ -15,6 +15,10 @@ import { BitacoraRestService } from './Codegen/api/bitacoraRest.service';
 import { CarreraRestService } from './Codegen/api/carreraRest.service';
 import { EstudianteRestService } from './Codegen/api/estudianteRest.service';
 import { LaboratorioRestService } from './Codegen/api/laboratorioRest.service';
+import { EstudianteCardComponent } from './components/estudiante-card/estudiante-card.component';
+import { LaboratorioCardComponent } from './components/laboratorio-card/laboratorio-card.component';
+import { ListaequiposComponent } from './components/listaequipos/listaequipos.component';
+import { ListamateriasComponent } from './components/listamaterias/listamaterias.component';
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import { LaboratorioRestService } from './Codegen/api/laboratorioRest.service';
     BodyComponent,
     RegistroComponent,
     FooterComponent,
-    ListarComponent
+    ListarComponent,
+    EstudianteCardComponent,
+    LaboratorioCardComponent,
+    ListaequiposComponent,
+    ListamateriasComponent
   ],
   imports: [
     BrowserModule,

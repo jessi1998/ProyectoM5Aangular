@@ -12,9 +12,24 @@
             <p class="lead text-center " style="opacity: 3; font-size: 30px ">
                 <b>Lista de laboratorios</b>
             </p>
-            <div class="list-group  " *ngFor=" let estudiante of estudiantes">
-                <a href="# " class="list-group-item list-group-item-action "> {{estudiante.nombre}} </a>
-            </div>
+            <table class="table table-bordered table-light">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" *ngFor='let cabecera of listacabecera'>{{cabecera}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let bitacora of bitacoras'>
+                        <th scope="row">{{bitacora.id_estudiante}}</th>
+                        <th scope="row">*</th>
+                        <th scope="row">*</th>
+                        <th scope="row">{{bitacora.fecha_bitacora}}</th>
+                        <th scope="row">{{bitacora.nombre_equipo}}</th>
+                        <th scope="row">{{bitacora.id_laboratorio}}</th>
+                    </tr>
+
+                </tbody>
+            </table>
         </div>
 
     </div>
