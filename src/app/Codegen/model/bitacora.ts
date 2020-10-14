@@ -11,10 +11,13 @@
  */
 
 export interface Bitacora { 
+    carreraNombre?: string;
+    cedula?: string;
     descripcionBitacora?: string;
     fechaBitacora?: Date;
     id?: number;
-    idEstudiante?: number;
     idLaboratorio?: number;
+    nivelNombre?: string;
+    nombreAsignatura?: string;
     nombreEquipo?: string;
 }

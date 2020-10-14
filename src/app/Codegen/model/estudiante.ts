@@ -15,7 +15,6 @@ export interface Estudiante {
     cedula?: string;
     ciudad?: string;
     correoInstitucional?: string;
-    id?: number;
     idCarrera?: number;
     nombre?: string;
     telefono?: string;
