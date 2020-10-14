@@ -11,7 +11,7 @@ export class ListarComponent implements OnInit {
 
   estudiantes: any;
   bitacoras: any;
-  listacabecera = ['Cedula', 'Estudiante', 'Fecha', 'Equipo', 'Laboratorio', 'Descripcion'];
+  listacabecera = ['Cedula', 'Fecha', 'Equipo', 'Laboratorio', 'Descripcion'];
   cedula: '';
   nombre: any;
   apellido: any;

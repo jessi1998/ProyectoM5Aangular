@@ -16,7 +16,7 @@ import { BitacoraRestService } from '../../Codegen/api/bitacoraRest.service';
 })
 export class RegistroComponent implements OnInit {
 
-  cedula: '';
+  cedula: string = '';
   estudiante: any;
   nombre: '';
   apellido: '';
@@ -26,25 +26,38 @@ export class RegistroComponent implements OnInit {
   asignatura: '';
   carrera: any;
   nombrecarrera: '';
-  nombreequipo:'';
-  descripcionbitacora:'';
+  nombreequipo: '';
+  descripcionbitacora: '';
   laboratorio: any;
   equipos: any;
+  asignaturaSelect: string = '';
+  selectasignatura: string = '';
+  nivelSeleccion: string = '';
+  selectnivel: string = '';
+  laboratorioSelect: number;
+  selectlaboratorio: number;
+  equipoSelect: string = '';
+  selectequipo: string = '';
   fecha = new Date().toLocaleString();
-  constructor(private estudianteservice: EstudianteRestService, private carreraservice: CarreraRestService, private laboratorioservice: LaboratorioRestService,private bitacoraservice:BitacoraRestService ){}
+  bitacora: Bitacora = {
+    carreraNombre: '', cedula: '', descripcionBitacora: '', fechaBitacora: new Date(), id: 0,
+    idLaboratorio: 0, nivelNombre: '', nombreAsignatura: '', nombreEquipo: ''
+  };
+
+  constructor(private estudianteservice: EstudianteRestService, private carreraservice: CarreraRestService,
+    private laboratorioservice: LaboratorioRestService, private bitacoraservice: BitacoraRestService) { }
 
 
 
   ngOnInit(): void {
-   console.log(this.fecha);
-
+    console.log(this.fecha);
   }
 
+
   Buscar() {
-    this.estudianteservice.findByCedulaUsingGET(this.cedula).subscribe(data=>{
+    this.estudianteservice.findByCedulaUsingGET(this.cedula).subscribe(data => {
       this.estudiante = data;
       this.nombre = this.estudiante[0].nombre;
-      //console.log(this.nombre);
       this.apellido = this.estudiante[0].apellido;
       this.id = this.estudiante[0].id_carrera;
       this.BuscarCarrera();
@@ -57,29 +70,63 @@ export class RegistroComponent implements OnInit {
       this.carrera = data;
       this.nombrecarrera = this.carrera[0].carrera_nombre;
       this.nivel = this.carrera[0].niveles;
-      console.log(this.nivel);
-      this.asignatura = this.carrera[0].niveles[0].asignaturas;
-     // console.log(this.asignatura);
+
     });
+
   }
   BuscarLaboratorio() {
     this.laboratorioservice.listLaboratorysUsingGET().subscribe(data => {
       this.laboratorio = data;
-      this.equipos = this.laboratorio[0].equipos;
-      //console.log(this.laboratorio);
+      //  this.equipos = this.laboratorio[0].equipos;
     });
   }
-  SelectNivel(){
-    console.log(this.asignatura)
+  SelectAsignatura() {
+    this.selectasignatura = this.asignaturaSelect;
+    console.log(this.selectasignatura);
   }
-  GuardarBitacora(){
-    console.log(this.descripcionbitacora)
-    let  bitacora: Bitacora = {id:9,cedula:this.cedula,fechaBitacora:new Date(),idLaboratorio:4,nombreEquipo:'this.nombreequipo,',descripcionBitacora:this.descripcionbitacora};
-    this.bitacoraservice.saveBinnacleUsingPOST(bitacora).subscribe(data=>{
-      console.log(this.descripcionbitacora)
-      console.log(data)
-    })
-   
+  SelectNivel() {
+    this.selectnivel = this.nivelSeleccion;
+    console.log(this.selectnivel);
+    this.carreraservice.findByIdUsingGET(this.id).subscribe(data => {
+      this.asignatura = this.carrera[0].niveles[parseInt(this.selectnivel) - 1].asignaturas;
+    });
   }
+  SeleccionarLaboratorio() {
+    this.selectlaboratorio = this.laboratorioSelect;
+    console.log(this.selectlaboratorio);
+    this.laboratorioservice.listLaboratorysUsingGET().subscribe(data => {
+      this.laboratorio = data;
+      this.equipos = this.laboratorio[this.selectlaboratorio - 1].equipos;
+      console.log(this.equipos);
+      });
   }
+  SeleccionarEquipo() {
+    this.selectequipo = this.equipoSelect;
+    console.log(this.selectequipo);
+  }
+
+  GuardarBitacora() {
+    console.log(this.descripcionbitacora);
+
+    this.bitacora.cedula = this.cedula;
+    this.bitacora.descripcionBitacora = this.descripcionbitacora;
+    this.bitacora.fechaBitacora = new Date();
+    this.bitacora.idLaboratorio = this.selectlaboratorio;
+    this.bitacora.nombreEquipo = this.selectequipo;
+    this.bitacora.nivelNombre = this.selectnivel;
+    this.bitacora.nombreAsignatura = this.selectasignatura;
+    this.bitacora.carreraNombre = this.nombrecarrera;
+
+    console.log(this.bitacora.descripcionBitacora);
+    console.log(this.nombrecarrera);
+    console.log(this.bitacora.carreraNombre);
+    console.log(this.bitacora.idLaboratorio);
+    this.bitacoraservice.saveBinnacleUsingPOST(this.bitacora).subscribe(data => {
+      console.log(this.bitacora.descripcionBitacora);
+      console.log(this.bitacora);
+    });
+
+  }
+
+}
 

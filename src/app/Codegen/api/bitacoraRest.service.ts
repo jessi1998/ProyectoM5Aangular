@@ -30,6 +30,7 @@ export class BitacoraRestService {
     protected basePath = '//localhost:8090/';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
+    private urlapi = 'http://localhost:8090/bitacora/save';
 
     constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: Configuration) {
         if (basePath) {
@@ -40,6 +41,9 @@ export class BitacoraRestService {
             this.basePath = basePath || configuration.basePath || this.basePath;
         }
     }
+    addNewBitacora(bitacora: Bitacora): Observable<Bitacora> {
+        return this.httpClient.post<Bitacora>(this.urlapi, bitacora);
+      }
 
     /**
      * @param consumes string[] mime-types

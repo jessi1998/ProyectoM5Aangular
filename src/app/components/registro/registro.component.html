@@ -41,9 +41,9 @@
                             <b>
                                 <label>Nivel:</label>
                             </b>
-                            <select name="nivel " id="nivel " class="form-control " (click)="SelectNivel()">
+                            <select [(ngModel)]="nivelSeleccion" name=" nivel " id="nivel " class="form-control " (change)="SelectNivel() ">
                                 
-                                <option  *ngFor="let niveles of nivel "  value={{niveles.nivel_nombre}}>
+                                <option  *ngFor="let niveles of nivel "  >
                                     {{niveles.nivel_nombre}}
                                 </option>
                             </select>
@@ -55,7 +55,7 @@
                             <b>
                                 <label>Asignatura:</label>
                             </b>
-                            <select name="asignatura " id="asignatura " class="form-control ">
+                            <select [(ngModel)]="asignaturaSelect " name="asignatura " (change)="SelectAsignatura()" d="asignatura " class="form-control ">
                                 <option *ngFor="let asignaturas of asignatura ">
                                     {{asignaturas.nombre_asignatura}}
                                 </option>
@@ -73,10 +73,10 @@
                             <b>
                                 <label>Numero laboratorio:</label>
                             </b>
-                            <select name="laboratorio " id="laboratorio " class="form-control ">
+                            <select [(ngModel)]="laboratorioSelect" name="laboratorio " id="laboratorio " (change)="SeleccionarLaboratorio()" class="form-control ">
                                 
                                 <option  *ngFor=' let laboratorios of laboratorio' >
-                                    {{laboratorios.nombre_laboratorio}}
+                                    {{laboratorios.id}}
                                 </option>
                             </select>
                         </div>
@@ -86,9 +86,9 @@
                             <b>
                                 <label>Numero de equipo:</label>
                             </b>
-                            <select name="nombreequipo " id="nombreequipo" class="form-control " [(ngModel)]="nombreequipo">
+                            <select name="nombreequipo " id="nombreequipo " class="form-control " [(ngModel)]="equipoSelect " (change)="SeleccionarEquipo()">
                                 <option *ngFor='let equipo of equipos' >
-                                    {{equipo.codigo_equipo}}
+                                    {{equipo.nombre_equipo}}
                                 </option>
                             </select>
                         </div>
@@ -105,7 +105,7 @@
                         <h5 class="card-header ">Observaciones</h5>
                         <div class="card-body ">
 
-                            <textarea class="form-control " aria-label="With textarea " name="descripcionbitacora" id="descripcionbitacora " [(ngModel)]="descripcionbitacora"></textarea>
+                            <textarea class="form-control " aria-label="With textarea " name="descripcionbitacora " id="descripcionbitacora " [(ngModel)]="descripcionbitacora "></textarea>
 
                         </div>
                     </div>
