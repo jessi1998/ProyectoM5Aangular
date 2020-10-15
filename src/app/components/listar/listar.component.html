@@ -1,16 +1,14 @@
 <div class="container text-center pb-2">
     <img src="assets\body2.jpg" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
     <form class="form-inline my-2 my-lg-0">
-        <div>
 
-        </div> <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-dark my-2 my-sm-0 " type="submit ">Buscar</button>
+
     </form>
     <div class="row pb-sm-0 my-5 ">
 
         <div class="col-lg-8 col-md-10 mx-auto ">
             <p class="lead text-center " style="opacity: 3; font-size: 30px ">
-                <b>Lista de laboratorios</b>
+                <b>Lista de Registros</b>
             </p>
             <table class="table table-bordered table-light">
                 <thead class="thead-dark">
@@ -21,10 +19,10 @@
                 <tbody>
                     <tr *ngFor='let bitacora of bitacoras'>
                         <th scope="row">{{bitacora.cedula}}</th>
-                        <th scope="row">{{bitacora.fecha_bitacora}}</th>
-                        <th scope="row">{{bitacora.nombre_equipo}}</th>
-                        <th scope="row">{{bitacora.id_laboratorio}}</th>
-                        <th scope="row">{{bitacora.descripcion_bitacora}}</th>
+                        <th scope="row">{{bitacora.fechaBitacora}}</th>
+                        <th scope="row">{{bitacora.nombreEquipo}}</th>
+                        <th scope="row">{{bitacora.idLaboratorio}}</th>
+                        <th scope="row">{{bitacora.descripcionBitacora}}</th>
                     </tr>
 
                 </tbody>

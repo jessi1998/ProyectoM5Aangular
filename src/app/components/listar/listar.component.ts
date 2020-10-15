@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BitacoraRestService } from 'src/app/Codegen';
 import { EstudianteRestService } from '../../Codegen/api/estudianteRest.service';
-import { BitacoraRestService } from '../../Codegen/api/bitacoraRest.service';
 
 @Component({
   selector: 'app-listar',

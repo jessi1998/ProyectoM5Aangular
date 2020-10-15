@@ -28,7 +28,7 @@ export class LaboratorioCardComponent implements OnInit {
     console.log('******');
     
     for (let i = 0; i < 10; i++) {
-      this.nombre = this.listaequipos[i].nombre_equipo;
+      this.nombre = this.listaequipos[i].nombreEquipo;
    }
     console.log(this.listaequipos);
     console.log(id);

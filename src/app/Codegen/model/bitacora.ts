@@ -14,7 +14,7 @@ export interface Bitacora {
     carreraNombre?: string;
     cedula?: string;
     descripcionBitacora?: string;
-    fechaBitacora?: Date;
+    fechaBitacora?: string;
     id?: number;
     idLaboratorio?: number;
     nivelNombre?: string;

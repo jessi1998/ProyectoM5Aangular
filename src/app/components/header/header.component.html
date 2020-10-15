@@ -13,10 +13,10 @@
             <li class="nav-item ">
                 <a class="nav-link " href="# " [routerLink]="['/home']">Inicio <span class="sr-only ">(current)</span></a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item " *ngIf="user">
                 <a class="nav-link " href="# " [routerLink]="['/registro']">Registrar</a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item " *ngIf="user">
                 <a class="nav-link " href="# " [routerLink]="['/listar']">Listar</a>
             </li>
             <li class="nav-item ">
@@ -24,5 +24,7 @@
             </li>
 
         </ul>
+
+
     </div>
 </nav>

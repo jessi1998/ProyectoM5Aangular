@@ -30,7 +30,6 @@ export class BitacoraRestService {
     protected basePath = '//localhost:8090/';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
-    private urlapi = 'http://localhost:8090/bitacora/save';
 
     constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: Configuration) {
         if (basePath) {
@@ -41,9 +40,6 @@ export class BitacoraRestService {
             this.basePath = basePath || configuration.basePath || this.basePath;
         }
     }
-    addNewBitacora(bitacora: Bitacora): Observable<Bitacora> {
-        return this.httpClient.post<Bitacora>(this.urlapi, bitacora);
-      }
 
     /**
      * @param consumes string[] mime-types
@@ -63,7 +59,7 @@ export class BitacoraRestService {
     /**
      * listBinnaclesById_laboratorio
      * 
-     * @param idLaboratorio id_laboratorio
+     * @param idLaboratorio idLaboratorio
      * @param nombre nombre
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -77,7 +73,7 @@ export class BitacoraRestService {
 
         let queryParameters = new HttpParams({encoder: new CustomHttpUrlEncodingCodec()});
         if (idLaboratorio !== undefined && idLaboratorio !== null) {
-            queryParameters = queryParameters.set('id_laboratorio', <any>idLaboratorio);
+            queryParameters = queryParameters.set('idLaboratorio', <any>idLaboratorio);
         }
         if (nombre !== undefined && nombre !== null) {
             queryParameters = queryParameters.set('nombre', <any>nombre);
@@ -112,8 +108,8 @@ export class BitacoraRestService {
     /**
      * listBinnaclesBySpecificsBinacle2
      * 
-     * @param idLaboratorio id_laboratorio
-     * @param nombreEquipo nombre_equipo
+     * @param idLaboratorio idLaboratorio
+     * @param nombreEquipo nombreEquipo
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -126,10 +122,10 @@ export class BitacoraRestService {
 
         let queryParameters = new HttpParams({encoder: new CustomHttpUrlEncodingCodec()});
         if (idLaboratorio !== undefined && idLaboratorio !== null) {
-            queryParameters = queryParameters.set('id_laboratorio', <any>idLaboratorio);
+            queryParameters = queryParameters.set('idLaboratorio', <any>idLaboratorio);
         }
         if (nombreEquipo !== undefined && nombreEquipo !== null) {
-            queryParameters = queryParameters.set('nombre_equipo', <any>nombreEquipo);
+            queryParameters = queryParameters.set('nombreEquipo', <any>nombreEquipo);
         }
 
         let headers = this.defaultHeaders;
@@ -162,8 +158,8 @@ export class BitacoraRestService {
      * listBinnaclesBySpecificsBinacle3
      * 
      * @param fecha fecha
-     * @param idLaboratorio id_laboratorio
-     * @param nombreEquipo nombre_equipo
+     * @param idLaboratorio idLaboratorio
+     * @param nombreEquipo nombreEquipo
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -180,10 +176,10 @@ export class BitacoraRestService {
             queryParameters = queryParameters.set('fecha', <any>fecha.toISOString());
         }
         if (idLaboratorio !== undefined && idLaboratorio !== null) {
-            queryParameters = queryParameters.set('id_laboratorio', <any>idLaboratorio);
+            queryParameters = queryParameters.set('idLaboratorio', <any>idLaboratorio);
         }
         if (nombreEquipo !== undefined && nombreEquipo !== null) {
-            queryParameters = queryParameters.set('nombre_equipo', <any>nombreEquipo);
+            queryParameters = queryParameters.set('nombreEquipo', <any>nombreEquipo);
         }
 
         let headers = this.defaultHeaders;
@@ -216,8 +212,8 @@ export class BitacoraRestService {
      * listBinnaclesBySpecificsBinacle
      * 
      * @param fecha fecha
-     * @param idLaboratorio id_laboratorio
-     * @param nombreEquipo nombre_equipo
+     * @param idLaboratorio idLaboratorio
+     * @param nombreEquipo nombreEquipo
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -234,10 +230,10 @@ export class BitacoraRestService {
             queryParameters = queryParameters.set('fecha', <any>fecha);
         }
         if (idLaboratorio !== undefined && idLaboratorio !== null) {
-            queryParameters = queryParameters.set('id_laboratorio', <any>idLaboratorio);
+            queryParameters = queryParameters.set('idLaboratorio', <any>idLaboratorio);
         }
         if (nombreEquipo !== undefined && nombreEquipo !== null) {
-            queryParameters = queryParameters.set('nombre_equipo', <any>nombreEquipo);
+            queryParameters = queryParameters.set('nombreEquipo', <any>nombreEquipo);
         }
 
         let headers = this.defaultHeaders;

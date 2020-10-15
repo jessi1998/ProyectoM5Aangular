@@ -2,7 +2,7 @@
     <div class="card animated fadeIn fast" *ngFor='let laboratorio of listalaboratorios' style="width: 18rem;">
         <img src="assets/laboratorio.jpg" alt="" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">{{laboratorio.nombre_laboratorio}}</h5>
+            <h5 class="card-title">{{laboratorio.nombreLaboratorio}}</h5>
             <p class="card-text">Edificio: {{laboratorio.edificio}}</p>
             <button type="button" (Click)="VerEquipos(laboratorio.id)" class="btn btn-outline-info btn-block"> Ver más</button>
         </div>
@@ -21,8 +21,8 @@
             </thead>
             <tbody>
                 <tr *ngFor='let equipo of listaequipos'>
-                    <th scope="row">{{equipo.nombre_equipo}}</th>
-                    <th scope="row">{{equipo.codigo_equipo}}</th>
+                    <th scope="row">{{equipo.nombreEquipo}}</th>
+                    <th scope="row">{{equipo.codigoEquipo}}</th>
                 </tr>
             </tbody>
         </table>

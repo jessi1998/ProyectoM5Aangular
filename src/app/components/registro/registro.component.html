@@ -1,5 +1,5 @@
 <div class="container text-center pb-5">
-    <img src="assets\body2.jpg" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
+    <img src="assets\body2.jpg" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.30;">
     <div class="row pb-sm-0 my-5">
         <div class="col-lg-8 col-md-10 mx-auto">
             <p class="lead text-center " style="opacity: 3; font-size: 30px">
@@ -8,7 +8,7 @@
             <form>
                 <div class="form-row align-items-center ">
                     <div class="col-auto ">
-                        <input type="text " class="form-control mb-2 " name="cedula " id="cedula " placeholder="Ingrese su cedula de identidad " [(ngModel)]="cedula ">
+                        <input type="text " class="form-control mb-2 " name="cedula " id="cedula " placeholder="Ingrese su cedula de identidad " [(ngModel)]="cedula">
                     </div>
                     <div class="col-auto ">
                         <button type="submit " class="btn btn-info " (click)="Buscar() ">Buscar</button>
@@ -21,7 +21,7 @@
                         </b>
                     </div>
                     <div class="col-auto ">
-                        <input type="text " class="form-control mb-2 " id="inlineFormInput " value={{fecha}}>
+                        <input type="text" readonly=»readonly» class="form-control mb-2 " id="inlineFormInput " value={{fecha}}>
                     </div>
                 </div>
                 <div class="form-row align-items-center ">
@@ -31,8 +31,11 @@
                     <div class="col-auto ">
                         <input type="text " class="form-control mb-3 " readonly=»readonly» placeholder="Apellido " value={{apellido}}>
                     </div>
+
+                </div>
+                <div>
                     <div class="col-auto ">
-                        <input type="text " class="form-control mb-3 " readonly=»readonly» placeholder="Carrera " value={{nombrecarrera}}>
+                        <input type="text " class="form-control  " readonly=»readonly» placeholder="Carrera " value={{nombrecarrera}}>
                     </div>
                 </div>
                 <div class="form-row ">
@@ -44,7 +47,7 @@
                             <select [(ngModel)]="nivelSeleccion" name=" nivel " id="nivel " class="form-control " (change)="SelectNivel() ">
                                 
                                 <option  *ngFor="let niveles of nivel "  >
-                                    {{niveles.nivel_nombre}}
+                                    {{niveles.nivelNombre}}
                                 </option>
                             </select>
                         </div>
@@ -57,7 +60,7 @@
                             </b>
                             <select [(ngModel)]="asignaturaSelect " name="asignatura " (change)="SelectAsignatura()" d="asignatura " class="form-control ">
                                 <option *ngFor="let asignaturas of asignatura ">
-                                    {{asignaturas.nombre_asignatura}}
+                                    {{asignaturas.nombreAsignatura}}
                                 </option>
                             </select>
                         </div>
@@ -88,7 +91,7 @@
                             </b>
                             <select name="nombreequipo " id="nombreequipo " class="form-control " [(ngModel)]="equipoSelect " (change)="SeleccionarEquipo()">
                                 <option *ngFor='let equipo of equipos' >
-                                    {{equipo.nombre_equipo}}
+                                    {{equipo.nombreEquipo}}
                                 </option>
                             </select>
                         </div>
