@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { APPROUTING } from './app.router';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {  GoogleLoginProvider} from 'angularx-social-login';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -40,8 +42,22 @@ import { ListamateriasComponent } from './components/listamaterias/listamaterias
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    SocialLoginModule,
     APPROUTING  ],
   providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('713671711445-l69np0og751s5jvo612u8rkqhb3rep15.apps.googleusercontent.com'
+            ),
+          }
+        ],
+      } as SocialAuthServiceConfig,
+    },
     BitacoraRestService,
     CarreraRestService,
     EstudianteRestService,
